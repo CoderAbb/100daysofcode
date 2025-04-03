@@ -1,0 +1,54 @@
+# Rock, Paper Scissors Game
+
+import random
+user_choice = int(input("what do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors "))
+
+computer_choice = random.randint(0, 2)
+print(f"Computer chose {computer_choice}")
+
+if user_choice >= 3 or user_choice < 0:
+    print("You typed an invalid number. You Lose! ")
+elif user_choice == 0 and computer_choice == 2:
+    print("You Win!")
+elif computer_choice == 0 and user_choice == 2:
+    print("You Lose!")
+elif computer_choice < user_choice:
+    print("You Lose!")
+elif computer_choice > user_choice:
+    print("You Lose!")
+elif computer_choice == user_choice:
+    print("Its a Draw!")
+-----------------------------------------------------------------------------------------------
+
+# Random Module
+
+import random
+random_integer = random.randint(1, 10)
+print(random_integer)
+random_number_0_to_1 = random.random()
+print(random_number_0_to_1)
+random_float = random.uniform(1, 10)
+print(random_float)
+
+-----------------------------------------------------------------------------------------------
+# Heads and Tails
+
+random_heads_or_tails = random.randint(0, 1)
+if random_heads_or_tails == 0:
+    print("Heads")
+else:
+    print("Tails")
+
+-----------------------------------------------------------------------------------------------
+# Lists
+
+states = ["Delaware", "Ohio", "Texas"]
+states[1] = "Dela"
+states.append("Greenland")
+print(states)
+
+import random
+friends = ["Rajesh", "Suresh", "Roshan", "David"]
+print(random.choice(friends))
+random_index = random.randint(0, 4)
+print(friends[random_index])
