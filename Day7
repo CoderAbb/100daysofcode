@@ -1,0 +1,42 @@
+# picking a random word and checking answers
+
+import random
+
+word_list = ["Suresh", "Rajesh", "Shankar"]
+chosen_word = random.choice(word_list)
+print(chosen_word)
+
+placeholder = ""
+word_length = len(chosen_word)
+
+for position in range(word_length):
+    placeholder += " "
+print(placeholder)
+
+game_over = False
+correct_letters = []
+
+guess = input("Guess a letter:").lower()
+
+display = " "
+
+for letter in chosen_word:
+    if letter == guess:
+        display += letter
+        correct_letters.append(guess)
+    elif letter in correct_letters:
+        display += letter
+    else:
+        display += "_"
+
+print(display)
+
+if guess not in chosen_word:
+    lives = 1
+    if lives == 0:
+        game_over = true
+        print("You Lose")
+
+if "_" not in display:
+    game_over = True
+    print("You Win")
